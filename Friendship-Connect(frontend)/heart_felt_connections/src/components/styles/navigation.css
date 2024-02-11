@@ -1,0 +1,70 @@
+/* MyNavbar.css */
+.my-custom-navbar {
+	background-color: #f8f9fa; /* Light background to keep it fresh and open */
+	box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Soft shadow for depth */
+  }
+  
+  .my-custom-navbar .navbar-brand {
+	color: #007bff; /* Brand color for visibility */
+	font-weight: bold; /* Make the brand name stand out */
+  }
+  
+  .my-custom-navbar .nav-link {
+	color: #555; /* Darker text for better readability */
+	margin-right: 15px; /* Space out the navigation links */
+  }
+  
+  .my-custom-navbar .nav-link:hover {
+	color: #007bff; /* Highlight links on hover to indicate interactivity */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 991px) {
+	.my-custom-navbar .navbar-nav {
+	  margin-top: 15px;
+	}
+  }
+  
+  /* Add more custom styles as needed */
+  .my-custom-navbar {
+    background: linear-gradient(45deg, #f8f9fa, #5b14a7); /* Sample gradient */
+    animation: animateBackground 10s ease infinite; /* Slow, continuous loop */
+    border-radius: 10px; /* Controls corner roundness, increase for bolder curve */
+overflow: hidden;    /* Ensures content doesn't bleed outside the rounded area */
+
+  }
+  
+  @keyframes animateBackground {
+     0% { background-position: 0% 50%; }
+     50% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+  }
+  
+  /* Ensures content doesn't bleed outside the rounded area */
+
+.nav-link {
+  transition: color 0.3s ease; /* Any style can transition: opacity, margin, etc. */ 
+}
+
+
+/* Target your specific link, assuming it has an appropriate class: */
+.find-friends-link { 
+  position: relative; /* Allows for absolute positioning of pseudo-element */
+}
+
+.find-friends-link:not(:hover)::before { /* Selects when NOT hovered  */
+  content: ''; 
+  position: absolute;
+  top: 50%; left: 50%; 
+  transform: translate(-50%, -50%); /* Centers pseudo-element  */
+  border-radius: 50%; 
+  background-color: rgba(0, 2, 133, 0.3); /* Semi-transparent white */
+  width: 10px; height: 10px;  /* Initial pseudo-element size */
+  animation: pulseEffect 2s ease-out infinite; 
+}
+
+@keyframes pulseEffect {
+  0% { opacity: 0; width: 10px;  height: 10px; } 
+  50% { opacity: 0.8; width: 20px; height: 20px; } /* Larger mid-pulse */
+  100% { opacity: 0; width: 30px; height: 30px; } /* Fades out, larger size */
+} 
